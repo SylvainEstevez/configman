@@ -1,0 +1,25 @@
+{
+  "name": "configurator",
+  "version": "1.0.0",
+  "description": "Env related variables made simple",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SylvainEstevez/configurator.git"
+  },
+  "keywords": [
+    "config"
+  ],
+  "author": "Sylvain Estevez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SylvainEstevez/configurator/issues"
+  },
+  "homepage": "https://github.com/SylvainEstevez/configurator#readme",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  }
+}
