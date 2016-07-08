@@ -1,5 +1,5 @@
 {
-  "name": "configurator",
+  "name": "configman",
   "version": "1.0.0",
   "description": "Env related variables made simple",
   "main": "src/index.js",
