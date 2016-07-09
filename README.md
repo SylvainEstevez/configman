@@ -1,5 +1,10 @@
 # ConfigMan
 
+[![npm version](https://badge.fury.io/js/configman.svg)](https://badge.fury.io/js/configman)
+[![Build Status](https://travis-ci.org/SylvainEstevez/configman.svg?branch=master)](https://travis-ci.org/SylvainEstevez/configman)
+[![Coverage Status](https://coveralls.io/repos/github/SylvainEstevez/configman/badge.svg?branch=master)](https://coveralls.io/github/SylvainEstevez/configman?branch=master)
+
+
 Dead simple, lightweight configuration utility.
 
 ## Installation
