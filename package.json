@@ -1,7 +1,7 @@
 {
   "name": "configurator",
   "version": "1.0.0",
-  "description": "Env related variables made simple",
+  "description": "Dead simple, lightweight configurations utility",
   "main": "src/index.js",
   "scripts": {
     "test": "grunt test"
