@@ -2,9 +2,13 @@
   "name": "configurator",
   "version": "1.0.0",
   "description": "Dead simple, lightweight configurations utility",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "main": "src/index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt check",
+    "travis": "grunt check & grunt coveralls"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
     "grunt": "^1.0.1",
     "grunt-mocha-istanbul": "^5.0.1",
     "istanbul": "^0.4.4",
