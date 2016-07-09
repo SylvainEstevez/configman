@@ -7,7 +7,8 @@ const cloneDeep = require('lodash/cloneDeep');
 const DEFAULT_ROOT = Path.join(process.cwd(), 'config');
 const DEFAULT_DEFAULT_CONFIG_NAME = 'default';
 
-class Configurator {
+
+class ConfigMan {
 
   get root() { return this._root; }
 
@@ -15,37 +16,31 @@ class Configurator {
 
   get defaultConfigName() { return this._defaultConfigName; }
 
-  constructor({ root = DEFAULT_ROOT , defaultConfigName = DEFAULT_DEFAULT_CONFIG_NAME, env = null }) {
-    this._env = env;
+  constructor(options = {}) {
+    this._env = options.env;
     if (!this._env) throw new Error('"env" is required');
-
-    this._root = root;
-    this._defaultConfigName = defaultConfigName;
+    
+    this._root = options.root || DEFAULT_ROOT;
+    this._defaultConfigName = options.defaultConfigName || DEFAULT_DEFAULT_CONFIG_NAME;
 
     this._cache = {};
+
+    Object.freeze(this);
   }
 
   get(...paths) {
     if (!paths.length) throw new Error('Unknown config : undefined');
-
-    let final = this._resolve(paths.shift());
-
-    for (const path of paths) {
-      final = final[path];
-    }
-
-    return final;
+    return paths.reduce((acc, prop) => acc[prop], this._resolve(paths.shift()));
   }
 
   _resolve(name) {
     if (name in this._cache) return this._cache[name];
     const config = cloneDeep(require(Path.join(this._root, name)));
-    const merged = merge(config[this._defaultConfigName], config[this._env]);
+    const merged = merge(config[this._defaultConfigName] || {}, config[this._env] || {});
     this._cache[name] = merged;
     return merged;
   }
 
 }
 
-
-module.exports = Configurator;
+module.exports = ConfigMan;
