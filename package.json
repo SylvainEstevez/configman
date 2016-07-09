@@ -1,6 +1,6 @@
 {
   "name": "configman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dead simple, lightweight configurations utility",
   "engines": {
     "node": ">=6.0.0"
