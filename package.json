@@ -1,10 +1,14 @@
 {
   "name": "configman",
   "version": "1.0.0",
-  "description": "Env related variables made simple",
+  "description": "Dead simple, lightweight configurations utility",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "main": "src/index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt check",
+    "travis": "grunt check & grunt coveralls"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,13 @@
   "homepage": "https://github.com/SylvainEstevez/configurator#readme",
   "dependencies": {
     "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "grunt": "^1.0.1",
+    "grunt-mocha-istanbul": "^5.0.1",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3"
   }
 }
