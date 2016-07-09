@@ -45,7 +45,7 @@ module.exports = (grunt) => {
 
   grunt.registerTask('test', ['mocha_istanbul:test']);
   grunt.registerTask('check', ['test']);
-  grunt.registerTask('coveralls', ['mocha_istanbul: coveralls']);
+  grunt.registerTask('coveralls', ['mocha_istanbul:coveralls']);
   grunt.registerTask('travis', ['check', 'coveralls']);
   grunt.registerTask('default', 'check');
 };
